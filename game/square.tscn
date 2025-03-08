@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dph4xp1jibybj"]
+
+[ext_resource type="Script" path="res://game/square.gd" id="1_17t52"]
+[ext_resource type="AudioStream" uid="uid://da4qn26numq5l" path="res://art/Tic Tac.mp3" id="2_xh5dt"]
+[ext_resource type="AudioStream" uid="uid://sjsoqrf1hkcn" path="res://art/Toe.mp3" id="3_8qoiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uppgl"]
+size = Vector2(142, 162.5)
+
+[node name="Square" type="Area2D"]
+script = ExtResource("1_17t52")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uppgl")
+
+[node name="Mark" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="TicTacSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_xh5dt")
+
+[node name="ToeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8qoiw")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

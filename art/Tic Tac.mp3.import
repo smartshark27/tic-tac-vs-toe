@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da4qn26numq5l"
+path="res://.godot/imported/Tic Tac.mp3-05f9b69a8443f8d4aa064a589af5b0f9.mp3str"
+
+[deps]
+
+source_file="res://art/Tic Tac.mp3"
+dest_files=["res://.godot/imported/Tic Tac.mp3-05f9b69a8443f8d4aa064a589af5b0f9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
