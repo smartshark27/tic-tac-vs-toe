@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs12x87frgdlp"]
+
+[ext_resource type="Texture2D" uid="uid://bmllyxsehdwfy" path="res://art/Tic_Tac.png" id="1_4qjpq"]
+[ext_resource type="Texture2D" uid="uid://dyl7nqy3q6gi2" path="res://art/Toe.png" id="2_idlqy"]
+[ext_resource type="Script" path="res://start_button.gd" id="3_0wakh"]
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="TicTac" type="Sprite2D" parent="."]
+position = Vector2(508, 179)
+scale = Vector2(2, 2)
+texture = ExtResource("1_4qjpq")
+
+[node name="Toe" type="Sprite2D" parent="."]
+position = Vector2(642, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("2_idlqy")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 344.0
+offset_top = 279.0
+offset_right = 784.0
+offset_bottom = 364.0
+theme_override_font_sizes/font_size = 50
+text = "Tic Tac vs Toe"
+horizontal_alignment = 1
+
+[node name="Author" type="Label" parent="."]
+offset_left = 344.0
+offset_top = 355.0
+offset_right = 784.0
+offset_bottom = 422.0
+theme_override_font_sizes/font_size = 20
+text = "By Smart Shark Games"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 489.0
+offset_top = 430.0
+offset_right = 637.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 40
+text = "Start"
+script = ExtResource("3_0wakh")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

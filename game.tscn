@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh8r35ghenmyd"]
+
+[ext_resource type="Texture2D" uid="uid://wy75i00rux1i" path="res://art/Lines.png" id="1_tue00"]
+[ext_resource type="Script" path="res://game.gd" id="1_y0smt"]
+[ext_resource type="PackedScene" uid="uid://dph4xp1jibybj" path="res://square.tscn" id="2_nhqed"]
+[ext_resource type="Script" path="res://start_button.gd" id="4_vgeia"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_y0smt")
+
+[node name="Grid" type="Node2D" parent="."]
+position = Vector2(388, 325)
+metadata/_edit_group_ = true
+
+[node name="Lines" type="Sprite2D" parent="Grid"]
+scale = Vector2(1.87891, 1.87891)
+texture = ExtResource("1_tue00")
+
+[node name="Middle" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(3, -4)
+
+[node name="TopLeft" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(-151, -176)
+
+[node name="TopMiddle" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(5, -178)
+
+[node name="TopRight" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(161, -177)
+
+[node name="MiddleLeft" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(-154, -6)
+
+[node name="MiddleRight" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(163, -1)
+
+[node name="BottomLeft" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(-154, 171)
+
+[node name="BottomMiddle" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(2, 173)
+
+[node name="BottomRight" parent="Grid" instance=ExtResource("2_nhqed")]
+position = Vector2(159, 177)
+
+[node name="HUD" type="Node2D" parent="."]
+position = Vector2(889, 328)
+
+[node name="Label" type="Label" parent="HUD"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -152.0
+offset_right = 100.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Your turn"
+horizontal_alignment = 1
+
+[node name="Mark" type="Sprite2D" parent="HUD"]
+scale = Vector2(2, 2)
+
+[node name="RestartButton" type="Button" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 104.0
+offset_right = 73.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+script = ExtResource("4_vgeia")
+
+[connection signal="pressed" from="HUD/RestartButton" to="HUD/RestartButton" method="_on_pressed"]
