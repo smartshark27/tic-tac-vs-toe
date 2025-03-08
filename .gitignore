@@ -16,7 +16,3 @@ mono_crash.*.json
 
 # VS Code
 .DS_Store
-
-# Ignore all files and folders under export except the web folder
-export/*
-!export/web/
